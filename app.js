@@ -1,337 +1,295 @@
 (() => {
   const DAYS = [
     {
-      kicker: "Day 01 · Arrival",
+      label: "Day 01 · Arrival",
       title: "Milan to Bergamo Città Alta",
-      body: "Settle into the Upper City. Venetian walls, evening light, and dinner above the plain at Il Pianone — the quiet overture before the valleys.",
+      description: "Settle into the Upper City for Venetian walls, evening light and dinner above the plain at Il Pianone.",
       stay: "Stay · Fuori Porta House",
-      img: "assets/images/module-bergamo.jpg",
-      alt: "Historic hillside city atmosphere",
+      image: "assets/images/module-bergamo.jpg",
+      alt: "Historic Bergamo on a hillside at dusk",
+      href: "guide/#module-bergamo",
     },
     {
-      kicker: "Day 02 · Stone & water",
+      label: "Day 02 · Stone and water",
       title: "Bergamo to Foroglio",
-      body: "Cross into Val Bavona. Stone houses under forested cliffs, the 110-metre fall, Camera Alpina, and supper at Ristorante La Froda.",
+      description: "Cross into Val Bavona for the stone village, the waterfall, Camera Alpina and supper at Ristorante La Froda.",
       stay: "Stay · Camera Alpina",
-      img: "assets/images/module-waterfall.jpg",
-      alt: "Alpine waterfall and stone village setting",
+      image: "assets/images/module-waterfall.jpg",
+      alt: "Foroglio stone houses below the village waterfall",
+      href: "guide/#module-foroglio",
     },
     {
-      kicker: "Day 03 · Conditional branch",
-      title: "Val Calnègia or Cròsa",
-      body: "Lower-loop hiking among granite pools — or, only after every gate passes, the high basin and proposed tent bivouac at Laghi della Cròsa.",
-      stay: "Branch · GO / CAUTION / NO-GO gates",
-      img: "assets/images/module-alpine.jpg",
+      label: "Day 03 · Valley walking",
+      title: "Val Calnègia, with Cròsa only if confirmed",
+      description: "Follow the lower valley among granite pools and stone shelters. Consider the high basin only with suitable conditions and written approval.",
+      stay: "Plan · Lower valley by default",
+      image: "assets/images/module-alpine.jpg",
       alt: "High alpine lake and ridge terrain",
+      href: "guide/#module-calnegia",
     },
     {
-      kicker: "Day 04 · Recovery",
+      label: "Day 04 · Lake pause",
       title: "Descent to Ascona",
-      body: "Lake Maggiore, spa stillness, and a waterfront evening. The soft counterweight after stone valleys and conditional altitude.",
+      description: "Move down to Lake Maggiore for a slower afternoon, spa time and an evening along the waterfront.",
       stay: "Stay · Hotel La Meridiana",
-      img: "assets/images/module-lake.jpg",
-      alt: "Lake Maggiore dusk atmosphere",
+      image: "assets/images/module-lake.jpg",
+      alt: "Lake Maggiore at dusk",
+      href: "guide/#module-ascona",
     },
     {
-      kicker: "Day 05 · Emerald circuit",
+      label: "Day 05 · Valley circuit",
       title: "Val Verzasca day trip",
-      body: "Dam, Lavertezzo’s Ponte dei Salti, Sonogno stone lanes, and clear green water — a road-trip loop from Ascona with an optional hiking variant.",
+      description: "Travel from the dam to Lavertezzo and Sonogno, with time for stone lanes, bridges and the valley’s clear green water.",
       stay: "Base · Ascona",
-      img: "assets/images/module-verzasca.jpg",
-      alt: "Emerald river and granite gorge",
+      image: "assets/images/module-verzasca.jpg",
+      alt: "Clear green water in a granite gorge",
+      href: "guide/#module-verzasca",
     },
     {
-      kicker: "Day 06 · Close",
+      label: "Day 06 · Return",
       title: "Ascona to Milan",
-      body: "A composed return. The planner closes the arc without rushing the last lake morning — then the city again.",
+      description: "Keep the final lake morning unhurried before returning to Milan and closing the route.",
       stay: "Return · Milan",
-      img: "assets/images/atmosphere-mist.jpg",
+      image: "assets/images/atmosphere-mist.jpg",
       alt: "Mist over alpine forest ridges",
+      href: "guide/#complete-itinerary",
     },
   ];
 
-  const MODULES = {
+  const PLANS = {
     bergamo: {
-      tag: "Città Alta · Urban prelude",
+      label: "Città Alta · Urban opening",
       title: "Bergamo Città Alta",
-      body: "A one-day Upper City immersion — walls, funicular light, and a hillside dinner — that works alone or as the Friday opening of the full itinerary.",
-      facts: [
-        "Primary stay: Fuori Porta House",
-        "Dinner: Il Pianone",
-        "Standalone or complete-trip Friday",
-      ],
-      img: "assets/images/module-bergamo.jpg",
+      description: "A measured first day among the Venetian walls, funicular lanes and evening views over the plain.",
+      facts: ["Stay at Fuori Porta House", "Dinner at Il Pianone", "Works as the opening or a day on its own"],
+      image: "assets/images/module-bergamo.jpg",
+      alt: "Historic Bergamo on a hillside at dusk",
+      href: "guide/#module-bergamo",
     },
     foroglio: {
-      tag: "Val Bavona · Signature village",
-      title: "Foroglio & Val Bavona",
-      body: "The emotional centre of the journey: a handful of stone houses, a thunderous fall, and the gateway into Val Calnègia.",
-      facts: [
-        "Primary stay: Camera Alpina",
-        "Restaurant: La Froda",
-        "Saturday spine of the complete trip",
-      ],
-      img: "assets/images/module-waterfall.jpg",
+      label: "Val Bavona · Stone village",
+      title: "Foroglio and Val Bavona",
+      description: "The central valley day: stone houses, the waterfall and a gentle introduction to Val Calnègia.",
+      facts: ["Stay at Camera Alpina", "Dinner at Ristorante La Froda", "Allow time to walk beyond the waterfall"],
+      image: "assets/images/module-waterfall.jpg",
+      alt: "Foroglio stone houses below the village waterfall",
+      href: "guide/#module-foroglio",
     },
     calnegia: {
-      tag: "Lower valley · Reliable hike",
+      label: "Lower valley · Day walk",
       title: "Lower Val Calnègia",
-      body: "Splüi shelters, rushing bridges, and granite pools. The confident choice when Cròsa gates do not clear.",
-      facts: [
-        "One-day hiking schedule",
-        "Weather Fallback A",
-        "Who should choose this instead of Cròsa",
-      ],
-      img: "assets/images/hero-foroglio.jpg",
+      description: "Stone shelters, footbridges and granite pools on the reliable lower route through the valley.",
+      facts: ["Designed as a one-day walk", "Preferred when high conditions are uncertain", "Timing and turn-around points included"],
+      image: "assets/images/module-alpine.jpg",
+      alt: "Alpine water and mountain ridges",
+      href: "guide/#module-calnegia",
     },
     crosa: {
-      tag: "High basin · Conditional only",
-      title: "Laghi della Cròsa bivouac",
-      body: "A proposed tent night above Val Calnègia. Use only after weather, access, and written approval all pass — otherwise take a designed fallback.",
-      facts: [
-        "GO / CAUTION / NO-GO framework",
-        "Not a casual add-on",
-        "Live checks required before departure",
-      ],
-      img: "assets/images/module-alpine.jpg",
+      label: "High basin · Conditional",
+      title: "Laghi della Cròsa",
+      description: "A proposed high-basin bivouac that should only be considered after weather, access and written approval are confirmed.",
+      facts: ["Not a casual addition", "Use the lower-valley plan when uncertain", "Reconfirm every condition before departure"],
+      image: "assets/images/module-alpine.jpg",
+      alt: "Remote alpine lake and rocky mountain terrain",
+      href: "guide/#module-crosa",
     },
     ascona: {
-      tag: "Lake Maggiore · Soft landing",
-      title: "Ascona & Lake Maggiore",
-      body: "Spa recovery, lakeside dining, and night music options — the deliberate exhale after alpine intensity.",
-      facts: [
-        "Primary: Hotel La Meridiana",
-        "Alt: Vista Lakefront",
-        "Dinner: Osteria Nostrana",
-      ],
-      img: "assets/images/module-lake.jpg",
+      label: "Lake Maggiore · Rest day",
+      title: "Ascona and Lake Maggiore",
+      description: "A deliberate slower day with spa time, lakeside dining and a quiet evening after the valleys.",
+      facts: ["Stay at Hotel La Meridiana", "Alternative lakefront accommodation", "Dinner options within walking distance"],
+      image: "assets/images/module-lake.jpg",
+      alt: "Lake Maggiore and distant mountains at dusk",
+      href: "guide/#module-ascona",
     },
     verzasca: {
-      tag: "Emerald gorge · Day circuit",
+      label: "Emerald water · Day circuit",
       title: "Val Verzasca",
-      body: "What photographs omit: logistics, timing, and how to keep the emerald water feeling discovered rather than crowded.",
-      facts: [
-        "Dam → Lavertezzo → Sonogno",
-        "Optional hiking version",
-        "Road-trip from Ascona",
-      ],
-      img: "assets/images/module-verzasca.jpg",
+      description: "A day route linking the dam, Lavertezzo, Ponte dei Salti and the stone village of Sonogno.",
+      facts: ["Start early for quieter stops", "Optional walking variation", "Return to Ascona in the evening"],
+      image: "assets/images/module-verzasca.jpg",
+      alt: "Clear green river among pale granite rocks",
+      href: "guide/#module-verzasca",
     },
   };
 
-  const nav = document.querySelector("[data-nav]");
-  const menuToggle = document.querySelector("[data-menu-toggle]");
-  const drawer = document.querySelector("[data-drawer]");
-  const toast = document.querySelector("[data-toast]");
-  const parallax = document.querySelector("[data-parallax]");
-  const mobileBar = document.querySelector("[data-mobile-bar]");
+  const header = document.querySelector("[data-header]");
+  const menuButton = document.querySelector("[data-menu-button]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const mobileActions = document.querySelector("[data-mobile-actions]");
+  const parallaxImage = document.querySelector("[data-parallax]");
 
-  /* Nav solid + mobile drawer */
-  const onScroll = () => {
-    if (!nav) return;
+  const closeMenu = (returnFocus = false) => {
+    if (!menuButton || !mobileMenu) return;
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open menu");
+    mobileMenu.hidden = true;
+    document.body.classList.remove("menu-open");
+    if (returnFocus) menuButton.focus();
+  };
+
+  const openMenu = () => {
+    if (!menuButton || !mobileMenu) return;
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "Close menu");
+    mobileMenu.hidden = false;
+    document.body.classList.add("menu-open");
+    requestAnimationFrame(() => mobileMenu.querySelector("a")?.focus());
+  };
+
+  menuButton?.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    if (isOpen) closeMenu(true);
+    else openMenu();
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => closeMenu(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
+      event.preventDefault();
+      closeMenu(true);
+    }
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (menuButton?.getAttribute("aria-expanded") !== "true") return;
+    if (header?.contains(event.target) || mobileMenu?.contains(event.target)) return;
+    closeMenu(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 900) closeMenu(false);
+  });
+
+  const handleScroll = () => {
     const y = window.scrollY;
-    nav.classList.toggle("is-solid", y > 24);
-    if (mobileBar) {
-      const heroH = Math.max(320, window.innerHeight * 0.72);
-      mobileBar.classList.toggle("is-visible", y > heroH);
-    }
+    header?.classList.toggle("is-scrolled", y > 30);
+    mobileActions?.classList.toggle("is-visible", y > Math.max(520, window.innerHeight * 0.7));
   };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
 
-  if (menuToggle && drawer) {
-    menuToggle.addEventListener("click", () => {
-      const open = !nav.classList.contains("is-open");
-      nav.classList.toggle("is-open", open);
-      menuToggle.setAttribute("aria-expanded", String(open));
-      drawer.hidden = !open;
-    });
+  handleScroll();
+  window.addEventListener("scroll", handleScroll, { passive: true });
 
-    drawer.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        drawer.hidden = true;
-      });
-    });
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (parallaxImage && !reduceMotion) {
+    window.addEventListener("scroll", () => {
+      const offset = Math.min(window.scrollY, 500) * 0.08;
+      parallaxImage.style.transform = `scale(1.035) translate3d(0, ${offset}px, 0)`;
+    }, { passive: true });
   }
 
-  /* Subtle hero parallax */
-  if (parallax && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    window.addEventListener(
-      "scroll",
-      () => {
-        const y = Math.min(window.scrollY, 600);
-        parallax.style.transform = `scale(1.06) translate3d(0, ${y * 0.18}px, 0)`;
-      },
-      { passive: true }
-    );
-  }
-
-  /* Timeline */
-  const dayButtons = [...document.querySelectorAll("[data-day]")];
-  const dayImg = document.querySelector("[data-day-img]");
-  const dayKicker = document.querySelector("[data-day-kicker]");
+  const dayTabs = [...document.querySelectorAll("[data-day]")];
+  const dayPanel = document.querySelector("[data-day-panel]");
+  const dayImage = document.querySelector("[data-day-image]");
+  const dayLabel = document.querySelector("[data-day-label]");
   const dayTitle = document.querySelector("[data-day-title]");
-  const dayBody = document.querySelector("[data-day-body]");
+  const dayDescription = document.querySelector("[data-day-description]");
   const dayStay = document.querySelector("[data-day-stay]");
+  const dayLink = document.querySelector("[data-day-link]");
 
-  const setDay = (index) => {
+  const selectDay = (index, moveFocus = false) => {
     const day = DAYS[index];
-    if (!day) return;
-    dayButtons.forEach((btn, i) => {
-      const on = i === index;
-      btn.classList.toggle("is-active", on);
-      btn.setAttribute("aria-selected", String(on));
+    if (!day || !dayPanel) return;
+    dayTabs.forEach((tab, tabIndex) => {
+      const selected = tabIndex === index;
+      tab.classList.toggle("is-active", selected);
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
     });
-    dayKicker.textContent = day.kicker;
+    dayPanel.setAttribute("aria-labelledby", dayTabs[index].id);
+    dayLabel.textContent = day.label;
     dayTitle.textContent = day.title;
-    dayBody.textContent = day.body;
+    dayDescription.textContent = day.description;
     dayStay.textContent = day.stay;
-    if (dayImg) {
-      dayImg.classList.add("is-swap");
+    if (dayLink) dayLink.href = day.href;
+    if (dayImage) {
+      dayImage.classList.add("is-changing");
       window.setTimeout(() => {
-        dayImg.src = day.img;
-        dayImg.alt = day.alt;
-        dayImg.classList.remove("is-swap");
-      }, 180);
+        dayImage.src = day.image;
+        dayImage.alt = day.alt;
+        dayImage.classList.remove("is-changing");
+      }, reduceMotion ? 0 : 150);
     }
+    if (moveFocus) dayTabs[index].focus();
   };
 
-  dayButtons.forEach((btn) => {
-    btn.addEventListener("click", () => setDay(Number(btn.dataset.day)));
+  const handleTabKeys = (event, tabs, select) => {
+    const current = tabs.indexOf(event.currentTarget);
+    let next = current;
+    if (event.key === "ArrowRight") next = (current + 1) % tabs.length;
+    else if (event.key === "ArrowLeft") next = (current - 1 + tabs.length) % tabs.length;
+    else if (event.key === "Home") next = 0;
+    else if (event.key === "End") next = tabs.length - 1;
+    else return;
+    event.preventDefault();
+    select(next, true);
+  };
+
+  dayTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => selectDay(index));
+    tab.addEventListener("keydown", (event) => handleTabKeys(event, dayTabs, selectDay));
   });
 
-  /* Modules */
-  const modButtons = [...document.querySelectorAll("[data-mod]")];
-  const modImg = document.querySelector("[data-mod-img]");
-  const modTag = document.querySelector("[data-mod-tag]");
-  const modTitle = document.querySelector("[data-mod-title]");
-  const modBody = document.querySelector("[data-mod-body]");
-  const modFacts = document.querySelector("[data-mod-facts]");
+  const planTabs = [...document.querySelectorAll("[data-plan]")];
+  const planPanel = document.querySelector("[data-plan-panel]");
+  const planImage = document.querySelector("[data-plan-image]");
+  const planLabel = document.querySelector("[data-plan-label]");
+  const planTitle = document.querySelector("[data-plan-title]");
+  const planDescription = document.querySelector("[data-plan-description]");
+  const planFacts = document.querySelector("[data-plan-facts]");
+  const planLink = document.querySelector("[data-plan-link]");
 
-  const setMod = (key) => {
-    const mod = MODULES[key];
-    if (!mod) return;
-    modButtons.forEach((btn) => {
-      const on = btn.dataset.mod === key;
-      btn.classList.toggle("is-active", on);
-      btn.setAttribute("aria-selected", String(on));
+  const selectPlan = (index, moveFocus = false) => {
+    const tab = planTabs[index];
+    const plan = PLANS[tab?.dataset.plan];
+    if (!tab || !plan || !planPanel) return;
+    planTabs.forEach((item, tabIndex) => {
+      const selected = tabIndex === index;
+      item.classList.toggle("is-active", selected);
+      item.setAttribute("aria-selected", String(selected));
+      item.tabIndex = selected ? 0 : -1;
     });
-    modTag.textContent = mod.tag;
-    modTitle.textContent = mod.title;
-    modBody.textContent = mod.body;
-    modFacts.innerHTML = mod.facts.map((f) => `<li>${f}</li>`).join("");
-    if (modImg) {
-      modImg.classList.add("is-swap");
+    planPanel.setAttribute("aria-labelledby", tab.id);
+    planLabel.textContent = plan.label;
+    planTitle.textContent = plan.title;
+    planDescription.textContent = plan.description;
+    planFacts.replaceChildren(...plan.facts.map((fact) => {
+      const item = document.createElement("li");
+      item.textContent = fact;
+      return item;
+    }));
+    planLink.href = plan.href;
+    if (planImage) {
+      planImage.classList.add("is-changing");
       window.setTimeout(() => {
-        modImg.src = mod.img;
-        modImg.classList.remove("is-swap");
-      }, 180);
+        planImage.src = plan.image;
+        planImage.alt = plan.alt;
+        planImage.classList.remove("is-changing");
+      }, reduceMotion ? 0 : 150);
     }
+    if (moveFocus) tab.focus();
   };
 
-  modButtons.forEach((btn) => {
-    btn.addEventListener("click", () => setMod(btn.dataset.mod));
+  planTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => selectPlan(index));
+    tab.addEventListener("keydown", (event) => handleTabKeys(event, planTabs, selectPlan));
   });
 
-  /* Count-up stats */
-  const counters = [...document.querySelectorAll("[data-count]")];
-  const animateCount = (el) => {
-    const target = Number(el.dataset.count);
-    const duration = 1100;
-    const start = performance.now();
-    const step = (now) => {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = String(Math.round(target * eased));
-      if (t < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          animateCount(entry.target);
-          obs.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.5 }
-    );
-    counters.forEach((el) => io.observe(el));
+  const revealItems = document.querySelectorAll(".section-heading, .route-summary, .timeline, .plan-browser, .check-card, .guide-intro, .format-card, .earlier-edition");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-revealed"));
   } else {
-    counters.forEach(animateCount);
-  }
-
-  /* Reveal on scroll */
-  document.querySelectorAll(".section__head, .timeline, .module-board, .stats, .checks, .hashes, .dl-grid, .caution__inner").forEach((el) => {
-    el.classList.add("reveal");
-  });
-
-  if ("IntersectionObserver" in window) {
-    const revealIo = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("is-in");
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => revealIo.observe(el));
-  } else {
-    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
-  }
-
-  /* Copy hashes */
-  let toastTimer;
-  const showToast = (msg) => {
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.hidden = false;
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => {
-      toast.hidden = true;
-    }, 1600);
-  };
-
-  document.querySelectorAll("[data-hash-row]").forEach((row) => {
-    const btn = row.querySelector("[data-copy]");
-    const value = row.querySelector(".hash__value");
-    if (!btn || !value) return;
-    btn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(value.textContent.trim());
-        btn.textContent = "Copied";
-        btn.classList.add("is-done");
-        showToast("Hash copied");
-        setTimeout(() => {
-          btn.textContent = "Copy";
-          btn.classList.remove("is-done");
-        }, 1400);
-      } catch {
-        showToast("Copy failed");
-      }
-    });
-  });
-
-  /* Keyboard left/right on timeline when focused */
-  const track = document.querySelector("[data-timeline]");
-  if (track) {
-    track.addEventListener("keydown", (e) => {
-      const active = dayButtons.findIndex((b) => b.classList.contains("is-active"));
-      if (e.key === "ArrowRight") {
-        e.preventDefault();
-        setDay(Math.min(DAYS.length - 1, active + 1));
-        dayButtons[Math.min(DAYS.length - 1, active + 1)]?.focus();
-      }
-      if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        setDay(Math.max(0, active - 1));
-        dayButtons[Math.max(0, active - 1)]?.focus();
-      }
-    });
+    revealItems.forEach((item) => item.classList.add("reveal"));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+    revealItems.forEach((item) => observer.observe(item));
   }
 })();
