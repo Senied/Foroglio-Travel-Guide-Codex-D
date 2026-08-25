@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#EEF2EF" />
+  <meta name="description" content="Foroglio Modular Travel Planner 2026 — version 1.2. A modular alpine itinerary across Bergamo, Foroglio, Val Calnègia, Ascona and Val Verzasca." />
+  <title>Foroglio — Modular Travel Planner 2026 · v1.2</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="Foroglio home">Foroglio</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#journey">Journey</a>
+      <a href="#modules">Modules</a>
+      <a href="#verify">Verified</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--ghost" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2.html" target="_blank" rel="noopener">Open guide</a>
+      <a class="btn btn--solid" href="#downloads">Get the guide</a>
+    </div>
+    <button class="nav__menu" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="drawer" data-drawer hidden>
+    <a href="#journey">Journey</a>
+    <a href="#modules">Modules</a>
+    <a href="#verify">Verified</a>
+    <a href="#downloads">Downloads</a>
+    <a class="btn btn--solid" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2.html" target="_blank" rel="noopener">Open interactive guide</a>
+  </div>
+
+  <main id="main">
+    <!-- HERO: one composition -->
+    <section class="hero" id="top">
+      <div class="hero__media" aria-hidden="true">
+        <img
+          src="assets/images/hero-foroglio.jpg"
+          alt=""
+          class="hero__img"
+          data-parallax
+          width="2400"
+          height="1600"
+          fetchpriority="high"
+        />
+        <div class="hero__veil"></div>
+      </div>
+      <div class="hero__content">
+        <p class="brand">Foroglio</p>
+        <h1>Stone villages. A 110-metre fall. Six days of valleys.</h1>
+        <p class="lede">A modular alpine planner for Bergamo, Val Bavona, Calnègia, Ascona and Verzasca — built for 25–30 September 2026.</p>
+        <div class="hero__cta">
+          <a class="btn btn--solid btn--lg" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2.html" target="_blank" rel="noopener">Open interactive guide</a>
+          <a class="btn btn--light btn--lg" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2.pdf" download>Download 74-page PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY ARC -->
+    <section class="section journey" id="journey">
+      <div class="section__head">
+        <p class="eyebrow">The arc</p>
+        <h2>Six days. Four moods. One spine.</h2>
+        <p class="support">Milan → Bergamo → Foroglio → Calnègia / Cròsa → Ascona → Verzasca → Milan.</p>
+      </div>
+
+      <div class="timeline" data-timeline>
+        <div class="timeline__track" role="tablist" aria-label="Journey days">
+          <button class="day is-active" role="tab" aria-selected="true" data-day="0" type="button">
+            <span class="day__date">Fri 25</span>
+            <span class="day__name">Bergamo</span>
+          </button>
+          <button class="day" role="tab" aria-selected="false" data-day="1" type="button">
+            <span class="day__date">Sat 26</span>
+            <span class="day__name">Foroglio</span>
+          </button>
+          <button class="day" role="tab" aria-selected="false" data-day="2" type="button">
+            <span class="day__date">Sun 27</span>
+            <span class="day__name">Cròsa</span>
+          </button>
+          <button class="day" role="tab" aria-selected="false" data-day="3" type="button">
+            <span class="day__date">Mon 28</span>
+            <span class="day__name">Ascona</span>
+          </button>
+          <button class="day" role="tab" aria-selected="false" data-day="4" type="button">
+            <span class="day__date">Tue 29</span>
+            <span class="day__name">Verzasca</span>
+          </button>
+          <button class="day" role="tab" aria-selected="false" data-day="5" type="button">
+            <span class="day__date">Wed 30</span>
+            <span class="day__name">Return</span>
+          </button>
+        </div>
+
+        <div class="timeline__stage" data-day-panel>
+          <figure class="timeline__figure">
+            <img src="assets/images/module-bergamo.jpg" alt="Historic hillside city at dusk" data-day-img width="1600" height="1067" />
+          </figure>
+          <div class="timeline__copy">
+            <p class="timeline__kicker" data-day-kicker>Day 01 · Arrival</p>
+            <h3 data-day-title>Milan to Bergamo Città Alta</h3>
+            <p data-day-body>Settle into the Upper City. Venetian walls, evening light, and dinner above the plain at Il Pianone — the quiet overture before the valleys.</p>
+            <p class="timeline__stay" data-day-stay>Stay · Fuori Porta House</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="section modules" id="modules">
+      <div class="section__head">
+        <p class="eyebrow">Modular builder</p>
+        <h2>Compose the trip, or take it whole.</h2>
+        <p class="support">Six self-contained modules. Compatible recipes. Weather fallbacks that still feel intentional.</p>
+      </div>
+
+      <div class="module-board" data-modules>
+        <div class="module-board__list" role="tablist" aria-label="Travel modules">
+          <button class="mod is-active" role="tab" aria-selected="true" data-mod="bergamo" type="button">
+            <span class="mod__id">M1</span>
+            <span class="mod__label">Bergamo</span>
+          </button>
+          <button class="mod" role="tab" aria-selected="false" data-mod="foroglio" type="button">
+            <span class="mod__id">M2</span>
+            <span class="mod__label">Foroglio</span>
+          </button>
+          <button class="mod" role="tab" aria-selected="false" data-mod="calnegia" type="button">
+            <span class="mod__id">M3</span>
+            <span class="mod__label">Calnègia</span>
+          </button>
+          <button class="mod" role="tab" aria-selected="false" data-mod="crosa" type="button">
+            <span class="mod__id">M4</span>
+            <span class="mod__label">Cròsa</span>
+          </button>
+          <button class="mod" role="tab" aria-selected="false" data-mod="ascona" type="button">
+            <span class="mod__id">M5</span>
+            <span class="mod__label">Ascona</span>
+          </button>
+          <button class="mod" role="tab" aria-selected="false" data-mod="verzasca" type="button">
+            <span class="mod__id">M6</span>
+            <span class="mod__label">Verzasca</span>
+          </button>
+        </div>
+
+        <article class="module-panel" data-mod-panel>
+          <div class="module-panel__media">
+            <img src="assets/images/module-bergamo.jpg" alt="" data-mod-img width="1600" height="1067" />
+          </div>
+          <div class="module-panel__body">
+            <p class="module-panel__tag" data-mod-tag>Città Alta · Urban prelude</p>
+            <h3 data-mod-title>Bergamo Città Alta</h3>
+            <p data-mod-body>A one-day Upper City immersion — walls, funicular light, and a hillside dinner — that works alone or as the Friday opening of the full itinerary.</p>
+            <ul class="module-panel__facts" data-mod-facts>
+              <li>Primary stay: Fuori Porta House</li>
+              <li>Dinner: Il Pianone</li>
+              <li>Standalone or complete-trip Friday</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ATMOSPHERE BAND -->
+    <section class="atmosphere" aria-label="Destination atmosphere">
+      <img src="assets/images/atmosphere-mist.jpg" alt="Mist over alpine ridges and forest" width="2000" height="1200" loading="lazy" />
+      <blockquote>
+        <p>Stone villages. A 110-metre fall. Granite pools. Lake recovery. Emerald water.</p>
+      </blockquote>
+    </section>
+
+    <!-- VERIFICATION -->
+    <section class="section verify" id="verify">
+      <div class="section__head">
+        <p class="eyebrow">Release gate</p>
+        <h2>Audited end to end.</h2>
+        <p class="support">Every page inspected. Every link matched. Every photo ID anchored. Bundle re-hashed on extract.</p>
+      </div>
+
+      <div class="stats" aria-label="Release metrics">
+        <div class="stat">
+          <span class="stat__value" data-count="74">0</span>
+          <span class="stat__label">PDF pages reviewed</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" data-count="45">0</span>
+          <span class="stat__label">Stable photo IDs</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" data-count="94">0</span>
+          <span class="stat__label">Visible placements</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" data-count="79">0</span>
+          <span class="stat__label">External targets</span>
+        </div>
+      </div>
+
+      <div class="checks">
+        <div class="check is-pass">
+          <span class="check__mark" aria-hidden="true"></span>
+          <div>
+            <strong>Final release gate</strong>
+            <p>Visual PDF review PASS · 10-role panel PASS</p>
+          </div>
+        </div>
+        <div class="check is-pass">
+          <span class="check__mark" aria-hidden="true"></span>
+          <div>
+            <strong>Module badges</strong>
+            <p>Yellow and green badges centered — no clipping</p>
+          </div>
+        </div>
+        <div class="check is-pass">
+          <span class="check__mark" aria-hidden="true"></span>
+          <div>
+            <strong>Parity</strong>
+            <p>79 targets identical in HTML directory and PDF</p>
+          </div>
+        </div>
+        <div class="check is-pass">
+          <span class="check__mark" aria-hidden="true"></span>
+          <div>
+            <strong>Integrity</strong>
+            <p>ZIP extracted; every member re-hashed successfully</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hashes" data-hashes>
+        <h3>Controlling SHA-256</h3>
+        <div class="hash" data-hash-row>
+          <div class="hash__meta">
+            <span class="hash__label">HTML guide</span>
+            <code class="hash__value">93121875A7B943E27C5C495C472A4AA6456E691F65DC4B22F54D160ECF13DE4A</code>
+          </div>
+          <button type="button" class="hash__copy" data-copy>Copy</button>
+        </div>
+        <div class="hash" data-hash-row>
+          <div class="hash__meta">
+            <span class="hash__label">PDF</span>
+            <code class="hash__value">4FA2FFCFBDD2ACEC2CA58888F33CA184784FE6EE2824691B389F45231D297267</code>
+          </div>
+          <button type="button" class="hash__copy" data-copy>Copy</button>
+        </div>
+        <div class="hash" data-hash-row>
+          <div class="hash__meta">
+            <span class="hash__label">Complete bundle</span>
+            <code class="hash__value">409B913AADE99CB617E88774FDF890BDB1A1AEEC50420744785BCE3A2EAD78F2</code>
+          </div>
+          <button type="button" class="hash__copy" data-copy>Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section class="section downloads" id="downloads">
+      <div class="section__head">
+        <p class="eyebrow">Package</p>
+        <h2>Everything you need.</h2>
+        <p class="support">Interactive guide, print PDF, photo provenance, QA evidence, and checksums.</p>
+      </div>
+
+      <div class="dl-grid">
+        <a class="dl" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2_bundle.zip" download>
+          <span class="dl__kind">Primary</span>
+          <span class="dl__title">Complete package</span>
+          <span class="dl__meta">ZIP · all six release members</span>
+        </a>
+        <a class="dl" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2.pdf" download>
+          <span class="dl__kind">Print</span>
+          <span class="dl__title">74-page PDF</span>
+          <span class="dl__meta">A4 · visually inspected</span>
+        </a>
+        <a class="dl" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2.html" target="_blank" rel="noopener">
+          <span class="dl__kind">Interactive</span>
+          <span class="dl__title">HTML guide</span>
+          <span class="dl__meta">Self-contained · modular builder</span>
+        </a>
+        <a class="dl" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2_photo_manifest.json" download>
+          <span class="dl__kind">Provenance</span>
+          <span class="dl__title">Photo ID manifest</span>
+          <span class="dl__meta">P001–P045 · 94 placements</span>
+        </a>
+        <a class="dl" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2_QA.json" download>
+          <span class="dl__kind">Evidence</span>
+          <span class="dl__title">Complete QA record</span>
+          <span class="dl__meta">Page-level · functional</span>
+        </a>
+        <a class="dl" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2_SHA256SUMS.txt" download>
+          <span class="dl__kind">Integrity</span>
+          <span class="dl__title">SHA-256 checksums</span>
+          <span class="dl__meta">Controlling hashes</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CAUTION -->
+    <section class="section caution" id="live-checks">
+      <div class="caution__inner">
+        <p class="eyebrow">Before departure</p>
+        <h2>Live checks still required.</h2>
+        <p class="support">Weather, availability, access restrictions, and written approval for the conditional Cròsa bivouac must be confirmed before you go.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">Foroglio</div>
+    <p>Modular Travel Planner 2026 · Released 24 August 2026</p>
+    <p class="footer__credit">Photography: Foroglio (Unsplash); Bergamo Piazza Vecchia, Ponte dei Salti, and Ascona on Lake Maggiore (Wikimedia Commons). Guide photographs remain private trip-planning assets with separate provenance rules.</p>
+  </footer>
+
+  <div class="toast" data-toast hidden role="status" aria-live="polite">Copied</div>
+  <div class="mobile-bar" data-mobile-bar>
+    <a class="btn btn--solid" href="releases/Foroglio_Modular_Travel_Planner_2026_v1_2.html" target="_blank" rel="noopener">Open guide</a>
+    <a class="btn btn--ghost" href="#downloads">Downloads</a>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
