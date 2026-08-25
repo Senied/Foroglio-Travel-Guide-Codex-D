@@ -816,6 +816,12 @@ summary {
   margin: 14px 0 0;
 }
 
+.earlier-edition__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
 .earlier-edition .text-link {
   margin-top: 12px;
 }
@@ -926,11 +932,15 @@ summary {
   }
 
   .plan-tabs {
-    grid-template-columns: repeat(6, minmax(135px, 1fr));
+    grid-template-columns: repeat(6, minmax(112px, 1fr));
     overflow-x: auto;
     border-right: 0;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     scroll-snap-type: x proximity;
+  }
+
+  .plan-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .plan-tab {
@@ -1050,7 +1060,11 @@ summary {
     grid-template-columns: repeat(6, minmax(112px, 1fr));
     overflow-x: auto;
     scroll-snap-type: x proximity;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+  }
+
+  .timeline__tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .day-tab {
