@@ -1,25 +1,21 @@
 # Foroglio travel planner
 
-A responsive travel website for a six-day journey through Bergamo, Foroglio, Val Calnègia, Ascona and Val Verzasca.
+A six-day journey from Milan through Bergamo, Foroglio, Val Calnègia, Ascona and Val Verzasca.
 
-## Open locally
+The website includes the complete itinerary, shorter day plans, accommodation and dining suggestions, transport notes, mountain conditions, maps, practical checklists and destination photography. The same journey is available as an interactive guide and a printable guide.
 
-```bash
-cd foroglio-modular-travel-planner-site
-python -m http.server 8765
-```
+## Open the guide
 
-Then open `http://127.0.0.1:8765/` in a browser.
+Open `index.html` through a local web server to begin with the journey overview. From there you can open either guide format and reach the quietly preserved earlier editions.
 
-## Contents
+## Main files
 
-| Path | Purpose |
+| Path | Contents |
 | --- | --- |
-| `index.html` | Traveler-facing overview |
-| `styles.css` / `app.js` | Responsive design and interactions |
-| `guide/` | Current interactive and printable travel guides |
-| `previous/` | Earlier interactive guide |
-| `assets/images/` | Website photography and responsive hero images |
-| `releases/` | Preserved technical archive |
+| `index.html` | Journey overview |
+| `guide/` | Interactive and printable travel guides |
+| `previous/` | Original earlier guide |
+| `releases/` | Earlier complete editions |
+| `assets/images/` | Destination photography |
 
-The public pages link to the current guide and keep the earlier edition available quietly for reference. The technical archive is retained unchanged and is not part of the traveler-facing navigation.
+Weather, access, seasonal openings, room availability and the proposed Cròsa bivouac conditions should always be confirmed close to departure.
