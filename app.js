@@ -23,8 +23,8 @@
       title: "Val Calnègia, with Cròsa only if confirmed",
       description: "Follow the lower valley among granite pools and stone shelters. Consider the high basin only with suitable conditions and written approval.",
       stay: "Plan · Lower valley by default",
-      image: "assets/images/module-alpine.jpg",
-      alt: "High alpine lake and ridge terrain",
+      image: "assets/images/module-calnegia.jpg",
+      alt: "Stone bridge and rushing water in Val Calnègia",
       href: "guide/#module-calnegia",
     },
     {
@@ -80,8 +80,8 @@
       title: "Lower Val Calnègia",
       description: "Stone shelters, footbridges and granite pools on the reliable lower route through the valley.",
       facts: ["Designed as a one-day walk", "Preferred when high conditions are uncertain", "Timing and turn-around points included"],
-      image: "assets/images/module-alpine.jpg",
-      alt: "Alpine water and mountain ridges",
+      image: "assets/images/module-calnegia.jpg",
+      alt: "Stone bridge and rushing water in Val Calnègia",
       href: "guide/#module-calnegia",
     },
     crosa: {
@@ -89,8 +89,8 @@
       title: "Laghi della Cròsa",
       description: "A proposed high-basin bivouac that should only be considered after weather, access and written approval are confirmed.",
       facts: ["Not a casual addition", "Use the lower-valley plan when uncertain", "Reconfirm every condition before departure"],
-      image: "assets/images/module-alpine.jpg",
-      alt: "Remote alpine lake and rocky mountain terrain",
+      image: "assets/images/module-crosa.jpg",
+      alt: "Laghi della Cròsa high above Val Calnègia",
       href: "guide/#module-crosa",
     },
     ascona: {
