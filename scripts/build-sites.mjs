@@ -13,7 +13,6 @@ const publicEntries = [
   "assets",
   "guide",
   "previous",
-  "releases",
 ];
 
 await rm(outputDirectory, { recursive: true, force: true });
@@ -26,12 +25,6 @@ for (const entry of publicEntries) {
     recursive: true,
   });
 }
-
-// The current guide already lives at /guide; keep only earlier editions in the archive area.
-await rm(join(outputDirectory, "releases", "v1.3"), {
-  recursive: true,
-  force: true,
-});
 
 await cp(
   join(repositoryRoot, "worker", "index.js"),
