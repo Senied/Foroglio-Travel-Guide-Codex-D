@@ -55,9 +55,9 @@
       title: "Ascona to Milan",
       description: "Keep the final lake morning unhurried before returning to Milan and closing the route.",
       stay: "Return · Milan",
-      image: "assets/images/days/alpine-ridges-1400.webp",
-      srcset: "assets/images/days/alpine-ridges-640.webp 640w, assets/images/days/alpine-ridges-1400.webp 1400w",
-      alt: "Mist over alpine forest ridges",
+      image: "assets/images/days/ascona-1200.webp",
+      srcset: "assets/images/days/ascona-640.webp 640w, assets/images/days/ascona-1200.webp 1200w",
+      alt: "Lake Maggiore and distant mountains at dusk",
       href: "guide/#complete-itinerary",
     },
   ];
